@@ -6,7 +6,7 @@ import Search from '../Search/Search';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function App() {
+export default function MainHeader() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Nav className="mr-auto">
