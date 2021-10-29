@@ -52,8 +52,15 @@ const cartSlice = createSlice({
         },
         toggleCartIsVisible(state) {
             state.cartIsVisible = !state.cartIsVisible;
+        },
+        emptyCart(state, action) {
+            state.items= [];
+            state.totalQty= 0;
+            state.totalPrice= 0;
+            state.cartIsVisible= false;
         }
     }
+
 });
 
 export const cartActions = cartSlice.actions;

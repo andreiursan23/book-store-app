@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    items: []
+    items: [],
+    searchItems:[]
 }
 
 const productsSlice = createSlice({
@@ -10,6 +11,9 @@ const productsSlice = createSlice({
     reducers: {
         loadProducts(state, action) {
             state.items = action.payload;
+        },
+        loadSearchProducts(state, action){
+            state.searchItems = action.payload;
         }
     }
 });

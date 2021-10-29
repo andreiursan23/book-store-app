@@ -45,3 +45,17 @@ export const deleteProduct = (id) => {
             })
     }
 }
+
+export const searchProducts = (text) => {
+    return (dispatch) => {
+        axios.post('http://apps.loopevo.com/apis/shop/search.php', { search: text })
+            .then((response) => {
+                dispatch(productsActions.loadSearchProducts(response.data));
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+}
+
+// http://apps.loopevo.com/apis/shop/search.php { search }

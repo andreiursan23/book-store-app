@@ -1,12 +1,20 @@
 import Card from '../UI/Card';
 import './Cart.css';
 import CartItem from './CartItem';
-import { useSelector } from 'react-redux';
+import {sendOrder} from '../../store/cart/cart-actions';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 const Cart = (props) => {
   const currentItems = useSelector(state => state.cart.items);
   const totalPrice = useSelector(state => state.cart.totalPrice);
   const totalQty = useSelector(state => state.cart.totalQty);
+ 
+  const dispatch = useDispatch();
+  const orderBooks = () => {
+      dispatch(sendOrder(currentItems));
+  }
+
 
   if (currentItems.length === 0) return <></>
 
@@ -26,7 +34,7 @@ const Cart = (props) => {
       </ul>
       <h3>Total Quantity: {totalQty}</h3>
       <h3>Total Price: {totalPrice}</h3>
-      <button>Order</button>
+      <button onClick={orderBooks}>Order</button>
     </Card>
   );
 };
