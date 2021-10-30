@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     items: [],
-    searchItems:[]
+    searchItems: [],
+    productsCategory: []
 }
 
 const productsSlice = createSlice({
@@ -14,7 +15,10 @@ const productsSlice = createSlice({
         },
         loadSearchProducts(state, action){
             state.searchItems = action.payload;
-        }
+        },
+        loadProductsCategory(state, action){
+            state.productsCategory = action.payload;
+        },
     }
 });
 

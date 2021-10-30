@@ -8,6 +8,7 @@ import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
 import SearchResults from './components/Shop/SearchResults';
 import { useSelector } from 'react-redux';
+import CategoryProducts from './components/Shop/CategoryProducts';
 
 
 const AppRouter = () => {
@@ -18,8 +19,7 @@ const AppRouter = () => {
             return true
         } else {
             return false
-        }
-       
+        } 
     } 
 
     return (
@@ -55,7 +55,9 @@ const AppRouter = () => {
                     <SearchResults />
                 </Route>
 
-
+                <Route path='/category/:category'>
+                    <CategoryProducts />
+                </Route>
             </Switch>
         </BrowserRouter>
     )

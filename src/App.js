@@ -6,6 +6,10 @@ import './App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getSavedCart } from './store/cart/cart-actions';
+import { fetchCategories } from './store/products/products-actions';
+
+// user: admin
+// parola: codecool
 
 function App() {
   const dispatch = useDispatch();
@@ -17,8 +21,9 @@ function App() {
   }  
 
   useEffect(() => {
-    dispatch(getSavedCart())
+    dispatch(getSavedCart());
     checkLogin();
+    dispatch(fetchCategories());
   }, [])
 
 
